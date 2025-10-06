@@ -1,0 +1,48 @@
+﻿root = true
+
+# --- Reglas generales para todo el proyecto ---
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+# --- Archivos JavaScript, TypeScript, JSX y TSX ---
+[*.{js,jsx,ts,tsx}]
+quote_type = single
+indent_size = 2
+max_line_length = 120
+
+# --- Archivos JSON ---
+[*.json]
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+
+# --- Archivos YAML ---
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+
+# --- Archivos Markdown ---
+[*.md]
+trim_trailing_whitespace = false
+insert_final_newline = true
+
+# --- Archivos del backend (Node) ---
+[src/backend/**.js]
+indent_size = 2
+max_line_length = 100
+
+# --- Archivos del frontend (React) ---
+[src/frontend/**.{js,jsx,ts,tsx}]
+indent_size = 2
+max_line_length = 120
+
+# --- Archivos de configuración ---
+[*.{env,gitignore,editorconfig,eslint*,prettierrc}]
+indent_style = space
+insert_final_newline = true
