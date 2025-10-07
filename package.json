@@ -4,13 +4,21 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/backend/server.js"
+    "dev": "vite --config src/frontend/vite.config.js",
+    "build": "vite build --config src/frontend/vite.config.js",
+    "serve": "node src/backend/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^5.1.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.4",
+    "vite": "^7.1.9"
   }
 }
