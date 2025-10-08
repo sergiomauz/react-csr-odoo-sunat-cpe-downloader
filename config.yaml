@@ -1,2 +1,18 @@
 server:
   port: 13000
+
+companies:
+  - name: "Test EIRL"
+    ruc: "20000000001"
+    url: ""
+    apiKey: "20000000001"
+
+  - name: "Next Mobile SAC"
+    ruc: ""
+    url: ""
+    apiKey: ""
+
+  - name: "Lizval Corporación SAC"
+    ruc: ""
+    url: ""
+    apiKey: ""
