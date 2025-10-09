@@ -4,6 +4,7 @@ import axios from "axios";
 export class OdooService {
   constructor(config) {
     this.config = config;
+
   }
 
   getCompanyByRuc(ruc) {

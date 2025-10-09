@@ -1,13 +1,14 @@
 export class CpeController {
-  constructor(odooService) {
+  constructor(odooService, config) {
     this.odooService = odooService;
+    this.config = config;
   }
 
   queryDocument = async (req, res) => {
     try {
-      const dto = req.body;
-      const result = await this.odooService.verifyInvoice(dto);
-      res.json(result);
+      // const dto = req.body;
+      // const result = await this.odooService.verifyInvoice(dto);
+      res.json(`{ message: ${this.config.companies[0].name} }`);
     } catch (err) {
       res.status(400).json({ error: err.message });
     }

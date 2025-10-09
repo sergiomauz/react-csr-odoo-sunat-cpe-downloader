@@ -1,23 +1,18 @@
 import { Router } from "express";
-import {
-  verificarRegistro,
-  descargarZipA,
-  descargarZipB,
-  descargarPdfA,
-  descargarPdfB,
-} from "../controller.js";
-import { validarRequest } from "../validators/requestValidator.js";
-
-const router = Router();
-router.route("/user-accounts").get();
-
-router.route("/api/query/cpe").get(cpeController.queryDocument);
-router.route("/api/download/xml/:id").get( cpeController.downloadXml);
-router.route("/api/download/cdr/:id").get( cpeController.downloadCdr);
-router.route("/api/download/pdf-a4/:ruc").get( cpeController.downloadPdfA4);
-router.route("/api/download/pdf-ticket/:ruc").get( cpeController.downloadPdfTicket);
+import { OdooService } from "../infrastructure/odooService.js";
+import { CpeController } from "./controllers.js";
 
 
-export function addRouters(app) {
-  app.use("/",)
+export function addRouters(app, config) {
+  const odooService = new OdooService(config);
+  const cpeController = new CpeController(odooService, config);
+
+  const router = Router();
+  router.route("/api/query/cpe").post(cpeController.queryDocument);
+  router.route("/api/download/xml/:id").get( cpeController.downloadXml);
+  router.route("/api/download/cdr/:id").get( cpeController.downloadCdr);
+  router.route("/api/download/pdf-a4/:id").get( cpeController.downloadPdfA4);
+  router.route("/api/download/pdf-ticket/:id").get( cpeController.downloadPdfTicket);
+
+  app.use("/", router);
 };

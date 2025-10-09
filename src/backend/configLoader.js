@@ -12,12 +12,12 @@ export function loadConfig() {
     if (!config || !config.server.port || !config.companies) {
       throw new Error("Archivo YAML inválido.");
     }
-    console.log("✅ Configuración cargada correctamente desde YAML");
+    console.log("Configuración cargada correctamente desde YAML");
 
     return config;
 
   } catch (err) {
-    console.error("❌ Error al cargar la configuración YAML:", err.message);
+    console.error("Error al cargar la configuración YAML:", err.message);
     process.exit(1);
   }
 }
